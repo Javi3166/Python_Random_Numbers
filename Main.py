@@ -72,3 +72,31 @@ print("\nIt is possible to choose a random element in a list using .choice().")
 a = secrets.choice(mylist)
 print(a)
 
+print("\nIt is possible to generate random set of elements in an array using functions from the numpy module.")
+import numpy as np
+
+print("\nIt is possible to generate a list of floats using .random.rand().")
+arr = np.random.rand(3)
+print(arr)
+
+print("\nIt is also possible to generate a list of integers in a range instead of floats using randint().")
+arr = np.random.randint(3, 10, 3)
+print(arr)
+
+print("\nIt is also possible to generate a multi-dimensional array.")
+arr = np.random.randint(0, 10, (3,3))
+print(arr)
+
+print("\nIt is possible to shuffle a multi-dimensional array, however it will only shuffle the numbers in the same "
+      "column.")
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(arr)
+np.random.shuffle(arr)
+print(arr)
+
+print("\nnumpy has it's own number generation and seed method compared to the regular random module. It is recommended "
+      "use the numpy version instead when able.")
+np.random.seed(1)
+print(np.random.randint(0, 3, (3, 3)))
+np.random.seed(1)
+print(np.random.randint(0, 3, (3, 3)))
